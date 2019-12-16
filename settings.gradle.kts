@@ -31,4 +31,4 @@ pluginManagement {
     }
 }
 enableFeaturePreview("GRADLE_METADATA")
-include(":multiplatform-settings", ":multiplatform-settings-test", ":tests")
+include(":multiplatform-settings", ":multiplatform-settings-test", ":multiplatform-settings-serialization", ":tests")
