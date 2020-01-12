@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Russell Wolf
+ * Copyright 2020 Russell Wolf
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,6 +95,10 @@ private fun KotlinMultiplatformExtension.linkAppleSourceSets() {
         val iosX64Main by getting {
             kotlin.srcDirs(*appleMain.kotlin.srcDirs.toTypedArray())
             kotlin.srcDirs(*apple64Main.kotlin.srcDirs.toTypedArray())
+        }
+        val iosX64Test by getting {
+            kotlin.srcDirs(*appleTest.kotlin.srcDirs.toTypedArray())
+            kotlin.srcDirs(*apple64Test.kotlin.srcDirs.toTypedArray())
         }
 
         targets
