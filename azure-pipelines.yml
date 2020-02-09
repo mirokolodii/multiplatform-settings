@@ -81,7 +81,7 @@ jobs:
           publishJUnitResults: true
           testResultsFiles: '**/TEST-*.xml'
           tasks: 'clean iosTest'
-      
+
       - task: Xcode@5
         inputs:
           actions: 'build'
@@ -113,7 +113,19 @@ jobs:
           jdkArchitectureOption: 'x64'
           publishJUnitResults: true
           testResultsFiles: '**/TEST-*.xml'
-          tasks: 'clean publishKotlinMultiplatformPublicationToMavenLocal publishMetadataPublicationToMavenLocal publishMingwX64PublicationToMavenLocal publishMingwX86PublicationToMavenLocal'
+          tasks: 'clean publishKotlinMultiplatformPublicationToMavenLocal publishMetadataPublicationToMavenLocal publishMingwX64PublicationToMavenLocal'
+
+      - task: Gradle@2
+        inputs:
+          workingDirectory: ''
+          gradleWrapperFile: 'gradlew'
+          gradleOptions: '-Xmx3072m'
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: '1.8'
+          jdkArchitectureOption: 'x64'
+          publishJUnitResults: true
+          testResultsFiles: '**/TEST-*.xml'
+          tasks: 'clean publishKotlinMultiplatformPublicationToMavenLocal publishMetadataPublicationToMavenLocal publishMingwX86PublicationToMavenLocal'
 
     pool:
       vmImage: 'windows-2019'
