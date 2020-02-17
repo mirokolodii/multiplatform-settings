@@ -1,0 +1,3 @@
+headers = sdbm.h
+headerFilter = **
+package = com.russhwolf.settings.cinterop
